@@ -11,7 +11,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Registrasi', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+          title: Text('Registrasi',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
         ),
         body: Container(
           color: Colors.green[900],
@@ -20,7 +21,11 @@ class MyApp extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text('Registrasi', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white)),
+                Text('Registrasi',
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white)),
                 SizedBox(height: 20),
                 Text('Nama Pengguna', style: TextStyle(color: Colors.white)),
                 TextField(
@@ -81,15 +86,16 @@ class MyApp extends StatelessWidget {
                   height: 100,
                   color: Colors.grey[200],
                   child: Center(
-                    child: Text('Tambah Foto KTP', style: TextStyle(color: Colors.grey)),
+                    child: Text('Tambah Foto KTP',
+                        style: TextStyle(color: Colors.grey)),
                   ),
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.red,
-                    onPrimary: Colors.white,
+                    foregroundColor: Colors.white,
+                    backgroundColor: Colors.red,
                   ),
                   child: Text('Daftar'),
                 ),
