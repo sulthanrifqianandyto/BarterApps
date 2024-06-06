@@ -28,7 +28,7 @@ class LoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Image.asset(
-                'assets/logo.png', // Pastikan Anda menambahkan gambar logo ke folder aset
+                'assets/logo.jpeg',
                 height: 100,
               ),
               SizedBox(height: 20),

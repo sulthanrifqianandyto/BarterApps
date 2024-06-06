@@ -30,7 +30,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Image.asset(
-                  'assets/logo.png', // Ganti dengan logo yang sesuai
+                  'assets/logo.jpeg',
                   height: 100,
                 ),
                 SizedBox(height: 20),
@@ -89,7 +89,8 @@ class ForgotPasswordScreen extends StatelessWidget {
                     // Proses pengiriman email
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white24, // Ganti primary dengan backgroundColor
+                    backgroundColor:
+                        Colors.white24, // Ganti primary dengan backgroundColor
                     padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
