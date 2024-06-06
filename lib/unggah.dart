@@ -65,7 +65,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color.fromRGBO(94, 152, 135, 1.0), 
+        backgroundColor: Color.fromRGBO(94, 152, 135, 1.0),
         body: Stack(
           children: <Widget>[
             Positioned(
@@ -75,19 +75,10 @@ class _MyAppState extends State<MyApp> {
                 onTap: () {
                   Navigator.of(context).pop();
                 },
-                child: Container(
-                  padding: EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Text(
-                    'Back',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                    ),
-                  ),
+                child: Icon(
+                  size: 30,
+                  Icons.arrow_back,
+                  color: const Color.fromARGB(255, 0, 0, 0),
                 ),
               ),
             ),
@@ -125,10 +116,10 @@ class _MyAppState extends State<MyApp> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Image.asset(
-                      'assets/left-arrow.png',
-                      width: 20,
-                      height: 20,
+                    Icon(
+                      Icons.arrow_left,
+                      size: 30,
+                      color: Colors.white,
                     ),
                     Container(
                       width: 60,
@@ -230,10 +221,10 @@ class _MyAppState extends State<MyApp> {
                         ],
                       ),
                     ),
-                    Image.asset(
-                      'assets/right-arrow.png',
-                      width: 20,
-                      height: 20,
+                    Icon(
+                      Icons.arrow_right,
+                      size: 30,
+                      color: Colors.white,
                     ),
                   ],
                 ),
@@ -243,237 +234,247 @@ class _MyAppState extends State<MyApp> {
               alignment: Alignment.topCenter,
               child: Padding(
                 padding: EdgeInsets.only(top: 210),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Container(
-                      width: 280,
-                      height: 50,
-                      color: Color.fromRGBO(217, 217, 217, 1.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Nama',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
+                child: SingleChildScrollView( // Tambahkan SingleChildScrollView di sini
+                  child: Padding(
+                    padding: EdgeInsets.only(bottom: 30.0), // Tambahkan padding bawah
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        // Input field for Nama
+                        Container(
+                          width: 280,
+                          height: 50,
+                          color: Color.fromRGBO(217, 217, 217, 1.0),
+                          padding: EdgeInsets.symmetric(horizontal: 8.0),
+                          child: TextField(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'Nama',
+                              hintStyle: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Container(
-                      width: 280,
-                      height: 80,
-                      color: Color.fromRGBO(217, 217, 217, 1.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Deskripsi',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Container(
-                      width: 280,
-                      height: 50,
-                      color: Color.fromRGBO(217, 217, 217, 1.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Harga',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Container(
-                      width: 280,
-                      height: 70,
-                      color: Color.fromRGBO(217, 217, 217, 1.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Lokasi',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Align(
-                      alignment: Alignment.topCenter,
-                      child: Padding(
-                        padding: EdgeInsets.only(top: 0),
-                        child: Text(
-                          'Pilih kategori barang anda',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
                           ),
                         ),
-                      ),
-                    ),
-                    Stack(
-                      children: [
-                        Align(
-                          alignment: AlignmentDirectional.topCenter,
-                          child: Padding(
-                            padding: EdgeInsets.only(top: 23),
-                            child: Container(
-                              width: 280,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                color: Color.fromRGBO(217, 217, 217, 1.0),
-                                borderRadius: BorderRadius.circular(15),
-                                border: Border.all(color: Colors.blue, width: 2),
+                        SizedBox(height: 10),
+                        // Input field for Deskripsi
+                        Container(
+                          width: 280,
+                          height: 80,
+                          color: Color.fromRGBO(217, 217, 217, 1.0),
+                          padding: EdgeInsets.symmetric(horizontal: 8.0),
+                          child: TextField(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'Deskripsi',
+                              hintStyle: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
                               ),
-                              child: Center(
-                                child: Text(
-                                  'Pilih Kategori',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
+                            ),
+                            maxLines: null,
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        // Input field for Harga
+                        Container(
+                          width: 280,
+                          height: 50,
+                          color: Color.fromRGBO(217, 217, 217, 1.0),
+                          padding: EdgeInsets.symmetric(horizontal: 8.0),
+                          child: TextField(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'Harga',
+                              hintStyle: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                            keyboardType: TextInputType.number,
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        // Input field for Lokasi
+                        Container(
+                          width: 280,
+                          height: 70,
+                          color: Color.fromRGBO(217, 217, 217, 1.0),
+                          padding: EdgeInsets.symmetric(horizontal: 8.0),
+                          child: TextField(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'Lokasi',
+                              hintStyle: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        Align(
+                          alignment: Alignment.topCenter,
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 0),
+                            child: Text(
+                              'Pilih kategori barang anda',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Stack(
+                          children: [
+                            Align(
+                              alignment: AlignmentDirectional.topCenter,
+                              child: Padding(
+                                padding: EdgeInsets.only(top: 23),
+                                child: Container(
+                                  width: 280,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    color: Color.fromRGBO(217, 217, 217, 1.0),
+                                    borderRadius: BorderRadius.circular(15),
+                                    border: Border.all(color: Colors.blue, width: 2),
                                   ),
+                                  child: Center(
+                                    child: Text(
+                                      'Pilih Kategori',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              left: 30,
+                              top: 10,
+                              child: Container(
+                                width: 45,
+                                height: 45,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.blue.withOpacity(1),
+                                ),
+                                child: Icon(
+                                  Icons.add,
+                                  size: 40,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        // Additional buttons (BARTER and JUAL)
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            CustomButton(
+                              onPressed: () {
+                                toggleButtonState(true);
+                              },
+                              text: 'BARTER',
+                              isActive: isBarterActive,
+                              textColor: isBarterActive ? Colors.white : Colors.black,
+                            ),
+                            CustomButton(
+                              onPressed: () {
+                                toggleButtonState(false);
+                              },
+                              text: 'JUAL',
+                              isActive: isJualActive,
+                              textColor: isJualActive ? Colors.white : Colors.black,
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        // Additional buttons (DELIVERY, TIDAK, GRATIS, BAYAR)
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                toggleDeliveryState();
+                              },
+                              child: Text(
+                                'DELIVERY',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                            CustomButton(
+                              onPressed: () {
+                                toggleTidakState();
+                              },
+                              text: 'TIDAK',
+                              isActive: isTidakActive,
+                              textColor: isTidakActive ? Colors.white : Colors.black,
+                            ),
+                            CustomButton(
+                              onPressed: () {
+                                toggleGratisState();
+                              },
+                              text: 'GRATIS',
+                              isActive: isGratisActive,
+                              textColor: isGratisActive ? Colors.white : Colors.black,
+                            ),
+                            CustomButton(
+                              onPressed: () {
+                                toggleBayarState();
+                              },
+                              text: 'BAYAR',
+                              isActive: isBayarActive,
+                              textColor: isBayarActive ? Colors.white : Colors.black,
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 30), // Added SizedBox for spacing
+                        // Upload button
+                        SizedBox(
+                          width: 280, // Ubah lebar sesuai kebutuhan Anda
+                          child: ElevatedButton(
+                            onPressed: () {
+                              // Add upload functionality here
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blue,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(12.0), // Sesuaikan padding sesuai kebutuhan Anda
+                              child: Text(
+                                'UPLOAD',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
                                 ),
                               ),
                             ),
                           ),
                         ),
-                        Positioned(
-                          left: 30,
-                          top: 10,
-                          child: Image.asset(
-                            'assets/add-blue.png',
-                            width: 40,
-                            height: 40,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
                       ],
                     ),
-                    SizedBox(height: 10),
-                    // Additional buttons (BARTER and JUAL)
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        CustomButton(
-                          onPressed: () {
-                            toggleButtonState(true);
-                          },
-                          text: 'BARTER',
-                          isActive: isBarterActive,
-                          textColor: isBarterActive ? Colors.white : Colors.black, // Ubah warna teks untuk BARTER
-                        ),
-                        CustomButton(
-                          onPressed: () {
-                            toggleButtonState(false);
-                          },
-                          text: 'JUAL',
-                          isActive: isJualActive,
-                          textColor: isJualActive ? Colors.white : Colors.black, // Ubah warna teks untuk JUAL
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 10),
-                    // Additional buttons (DELIVERY, TIDAK, GRATIS, BAYAR)
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            toggleDeliveryState();
-                          },
-                          child: Text(
-                            'DELIVERY',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                        CustomButton(
-                          onPressed: () {
-                            toggleTidakState();
-                          },
-                          text: 'TIDAK',
-                          isActive: isTidakActive,
-                          textColor: isTidakActive ? Colors.white : Colors.black, // Ubah warna teks untuk TIDAK
-                        ),
-                        CustomButton(
-                          onPressed: () {
-                            toggleGratisState();
-                          },
-                          text: 'GRATIS',
-                          isActive: isGratisActive,
-                          textColor: isGratisActive ? Colors.white : Colors.black, // Ubah warna teks untuk GRATIS
-                        ),
-                        CustomButton(
-                          onPressed: () {
-                            toggleBayarState();
-                          },
-                          text: 'BAYAR',
-                          isActive: isBayarActive,
-                          textColor: isBayarActive ? Colors.white : Colors.black, // Ubah warna teks untuk BAYAR
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 30), // Added SizedBox for spacing
-                    // Upload button
-                    SizedBox(
-                      width: 280, // Ubah lebar sesuai kebutuhan Anda
-                      child: ElevatedButton(
-                        onPressed: () {
-                          // Add upload functionality here
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0), // Sesuaikan padding sesuai kebutuhan Anda
-                          child: Text(
-                            'UPLOAD',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ),
@@ -489,14 +490,14 @@ class CustomButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String text;
   final bool isActive;
-  final Color? textColor; // Tambahkan properti textColor
+  final Color? textColor;
 
   const CustomButton({
     Key? key,
     required this.onPressed,
     required this.text,
     required this.isActive,
-    this.textColor, // Tambahkan textColor ke dalam konstruktor
+    this.textColor,
   }) : super(key: key);
 
   @override
@@ -513,7 +514,7 @@ class CustomButton extends StatelessWidget {
             style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.bold,
-              color: isActive ? textColor : Colors.black, // Gunakan textColor jika diberikan
+              color: isActive ? textColor : Colors.black,
             ),
           ),
         ),
