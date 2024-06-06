@@ -69,7 +69,8 @@ flutter:
     - assets/realme11.jpg
     - assets/realme12.webp
     - assets/apple12.jpg
-
+    - assets/logo.png
+    
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
