@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
         ),
         body: Container(
-          color: Colors.green[900],
+          color: Color.fromRGBO(94, 152, 135, 1.0),
           child: SingleChildScrollView(
             padding: EdgeInsets.all(20),
             child: Column(

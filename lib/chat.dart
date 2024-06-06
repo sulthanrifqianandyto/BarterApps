@@ -18,7 +18,7 @@ class ChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF77A391),
+      backgroundColor: Color.fromRGBO(94, 152, 135, 1.0),
       appBar: AppBar(
         title: Text(
           'Chat',
@@ -28,7 +28,7 @@ class ChatScreen extends StatelessWidget {
           ),
         ),
         centerTitle: true, // Memposisikan teks di tengah app bar
-        backgroundColor: Color(0xFF77A391),
+        backgroundColor: Color.fromRGBO(94, 152, 135, 1.0),
         elevation: 0,
       ),
       body: ListView(
